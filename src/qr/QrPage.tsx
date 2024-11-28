@@ -30,7 +30,7 @@ function QrPage() {
         return () => {
             clearTimeout(timer);
         };
-    }, [apiUrl]);
+    }, []);
 
     // useEffect(() => {
     //     // console.log("que?? = " + wsUrl)
