@@ -33,7 +33,7 @@ function QrPage() {
 
     useEffect(() => {
         // console.log("que?? = " + wsUrl)
-        const wsock1 = new WebSocket('ws://200.234.233.71:8080');
+        const wsock1 = new WebSocket(`ws://${wsUrl}`);
         // const wsock1 = new WebSocket(wsUrl);
         console.log(JSON.stringify(wsock1, null, 2))
         wsock1.onmessage = (message) => {
