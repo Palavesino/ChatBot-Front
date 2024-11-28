@@ -6,7 +6,7 @@ function QrPage() {
     const [qrScanned, setQrScanned] = useState(false); // Estado para saber si el QR ha sido escaneado
     const [refreshQR, setRefreshQR] = useState(false);
     const apiUrl = import.meta.env.VITE_APP_API_URL || "";  // URL base de la API 
-    const wsUrl = import.meta.env.VITE_APP_WS_URL || "";    // URL base de WebSocket
+    //const wsUrl = import.meta.env.VITE_APP_WS_URL || "";    // URL base de WebSocket
 
     useEffect(() => {
         const startBot = async () => {
@@ -32,31 +32,31 @@ function QrPage() {
         };
     }, [apiUrl]);
 
-    useEffect(() => {
-        // console.log("que?? = " + wsUrl)
-        const wsock1 = new WebSocket(`ws://${wsUrl}`);
-        // const wsock1 = new WebSocket(wsUrl);
-        console.log(JSON.stringify(wsock1, null, 2))
-        wsock1.onmessage = (message) => {
-            const data = JSON.parse(message.data);
-            if (data.type === 'QR_SCANNED') {
-                setQrScanned(true);
-                setRefreshQR(false); // Deja de refrescar el QR después de que se haya escaneado
-            }
-        };
+    // useEffect(() => {
+    //     // console.log("que?? = " + wsUrl)
+    //     const wsock1 = new WebSocket(`ws://${wsUrl}`);
+    //     // const wsock1 = new WebSocket(wsUrl);
+    //     console.log(JSON.stringify(wsock1, null, 2))
+    //     wsock1.onmessage = (message) => {
+    //         const data = JSON.parse(message.data);
+    //         if (data.type === 'QR_SCANNED') {
+    //             setQrScanned(true);
+    //             setRefreshQR(false); // Deja de refrescar el QR después de que se haya escaneado
+    //         }
+    //     };
 
-        wsock1.onerror = (error) => {
-            console.error('Error en WebSocket:', error);
-        };
+    //     wsock1.onerror = (error) => {
+    //         console.error('Error en WebSocket:', error);
+    //     };
 
-        wsock1.onclose = () => {
-            console.log('WebSocket cerrado');
-        };
+    //     wsock1.onclose = () => {
+    //         console.log('WebSocket cerrado');
+    //     };
 
-        return () => {
-            wsock1.close();
-        };
-    }, [wsUrl]);
+    //     return () => {
+    //         wsock1.close();
+    //     };
+    // }, [wsUrl]);
 
     useEffect(() => {
         const fetchQRCode = async () => {
