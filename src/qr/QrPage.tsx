@@ -11,11 +11,7 @@ function QrPage() {
     useEffect(() => {
         const startBot = async () => {
             try {
-                const response = await fetch(`${apiUrl}/start-bot`, {
-                    method: 'GET',
-                    credentials: 'include',
-                }
-
+                const response = await fetch(`${apiUrl}/start-bot`
                 );
                 if (!response.ok) {
                     console.error('Error al iniciar el bot');
@@ -67,10 +63,7 @@ function QrPage() {
             if (qrScanned) return;
 
             try {
-                const response = await fetch(`${apiUrl}/get-qr`, {
-                    method: 'GET',
-                    credentials: 'include',
-                });
+                const response = await fetch(`${apiUrl}/get-qr`);
                 if (response.ok) {
                     const data = await response.json();
                     const base64String = data.imageBase64;
