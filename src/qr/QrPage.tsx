@@ -11,7 +11,12 @@ function QrPage() {
     useEffect(() => {
         const startBot = async () => {
             try {
-                const response = await fetch(`${apiUrl}/start-bot`);
+                const response = await fetch(`${apiUrl}/start-bot`, {
+                    method: 'GET',
+                    credentials: 'include',
+                }
+
+                );
                 if (!response.ok) {
                     console.error('Error al iniciar el bot');
                 }
@@ -60,12 +65,15 @@ function QrPage() {
     useEffect(() => {
         const fetchQRCode = async () => {
             if (qrScanned) return;
-        
+
             try {
-                const response = await fetch(`${apiUrl}/get-qr`);
+                const response = await fetch(`${apiUrl}/get-qr`, {
+                    method: 'GET',
+                    credentials: 'include',
+                });
                 if (response.ok) {
                     const data = await response.json();
-                    const base64String = data.imageBase64; 
+                    const base64String = data.imageBase64;
                     setQrImage(`data:image/png;base64,${base64String}`);
                 } else {
                     setQrImage('fallback.png');
@@ -75,7 +83,7 @@ function QrPage() {
                 console.error('Error al obtener el QR:', error);
             }
         };
-        
+
 
         if (refreshQR && !qrScanned) {
             fetchQRCode();
