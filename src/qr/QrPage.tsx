@@ -32,8 +32,10 @@ function QrPage() {
     }, [apiUrl]);
 
     useEffect(() => {
-        const wsock1 = new WebSocket(wsUrl);
-
+        // console.log("que?? = " + wsUrl)
+        const wsock1 = new WebSocket('ws://200.234.233.71:8080');
+        // const wsock1 = new WebSocket(wsUrl);
+        console.log(JSON.stringify(wsock1, null, 2))
         wsock1.onmessage = (message) => {
             const data = JSON.parse(message.data);
             if (data.type === 'QR_SCANNED') {
@@ -58,13 +60,13 @@ function QrPage() {
     useEffect(() => {
         const fetchQRCode = async () => {
             if (qrScanned) return;
-
+        
             try {
                 const response = await fetch(`${apiUrl}/get-qr`);
                 if (response.ok) {
-                    const imageBlob = await response.blob();
-                    const imageUrl = URL.createObjectURL(imageBlob);
-                    setQrImage(imageUrl);
+                    const data = await response.json();
+                    const base64String = data.imageBase64; 
+                    setQrImage(`data:image/png;base64,${base64String}`);
                 } else {
                     setQrImage('fallback.png');
                     console.error('Error al obtener el QR: ', response.statusText);
@@ -73,6 +75,7 @@ function QrPage() {
                 console.error('Error al obtener el QR:', error);
             }
         };
+        
 
         if (refreshQR && !qrScanned) {
             fetchQRCode();
