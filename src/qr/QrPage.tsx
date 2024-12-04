@@ -58,24 +58,15 @@ function QrPage() {
 
             try {
                 // Enviar el nombre del QR en el body
-                const response = await fetch(`${apiUrl}/get-qr`, {
-                    method: 'POST', // Cambiado a POST
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ name: qrName }), // Enviar el nombre en el body
-                });
+                const response = await fetch(`${apiUrl}/get-qr/${qrName}`);
 
                 if (response.ok) {
                     const data = await response.json();
                     const base64String = data.imageBase64;
-
-                    // Establece la imagen del QR en base64
                     setQrImage(`data:image/png;base64,${base64String}`);
                 } else {
-                    // Usa una imagen de respaldo si ocurre un error
                     setQrImage('fallback.png');
-                    console.error('Error al obtener el QR:', response.statusText);
+                    console.error('Error al obtener el QR: ', response.statusText);
                 }
             } catch (error) {
                 console.error('Error al obtener el QR:', error);
