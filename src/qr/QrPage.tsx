@@ -34,23 +34,23 @@ function QrPage() {
         };
     }, []);
 
-    // useEffect(() => {
-    //     // console.log("que?? = " + wsUrl)
-    //     const wsock1 = new WebSocket(`${wsUrl}`);
-    //     // const wsock1 = new WebSocket(wsUrl);
-    //     console.log(JSON.stringify(wsock1, null, 2))
-    //     wsock1.onmessage = (message) => {
-    //         const data = JSON.parse(message.data);
-    //         if (data.type === 'QR_SCANNED') {
-    //             setQrScanned(true);
-    //             setRefreshQR(false); // Deja de refrescar el QR después de que se haya escaneado
-    //         }
-    //     };
+    useEffect(() => {
+        // console.log("que?? = " + wsUrl)
+        const wsock1 = new WebSocket(`${wsUrl}`);
+        // const wsock1 = new WebSocket(wsUrl);
+        console.log(JSON.stringify(wsock1, null, 2))
+        wsock1.onmessage = (message) => {
+            const data = JSON.parse(message.data);
+            if (data.type === 'QR_SCANNED') {
+                setQrScanned(true);
+                setRefreshQR(false); // Deja de refrescar el QR después de que se haya escaneado
+            }
+        };
 
-    //     return () => {
-    //         wsock1.close();
-    //     };
-    // }, []);
+        return () => {
+            wsock1.close();
+        };
+    }, []);
 
     useEffect(() => {
         const fetchQRCode = async () => {
