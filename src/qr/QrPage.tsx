@@ -7,7 +7,6 @@ function QrPage() {
     const [refreshQR, setRefreshQR] = useState(false);
     const [qrName, setQrName] = useState("");
     const apiUrl = import.meta.env.VITE_APP_API_URL || "";  // URL base de la API 
-    const wsUrl = import.meta.env.VITE_APP_WS_URL || "";    // URL base de WebSocket
 
     useEffect(() => {
         const startBot = async () => {
@@ -35,22 +34,26 @@ function QrPage() {
     }, []);
 
     useEffect(() => {
-        // console.log("que?? = " + wsUrl)
-        const wsock1 = new WebSocket(`${wsUrl}`);
-        // const wsock1 = new WebSocket(wsUrl);
-        console.log(JSON.stringify(wsock1, null, 2))
-        wsock1.onmessage = (message) => {
-            const data = JSON.parse(message.data);
-            if (data.type === 'QR_SCANNED') {
+        const eventSource = new EventSource(`${apiUrl}/events?qrfile=${qrName}`); // Reemplaza con tu URL del servidor SSE
+        eventSource.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            console.log('Datos recibidos:', data);
+            // Comprueba si isScanned es true
+            if (!data.fileExists) {
                 setQrScanned(true);
-                setRefreshQR(false); // Deja de refrescar el QR después de que se haya escaneado
+                setRefreshQR(false);
             }
         };
 
-        return () => {
-            wsock1.close();
+        eventSource.onerror = (error) => {
+            console.error('Error en EventSource:', error);
+            eventSource.close(); // Cierra la conexión si ocurre un error
         };
-    }, []);
+
+        return () => {
+            eventSource.close(); // Limpia el EventSource cuando se desmonte el componente
+        };
+    }, [qrName]);
 
     useEffect(() => {
         const fetchQRCode = async () => {
