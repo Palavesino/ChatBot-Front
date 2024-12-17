@@ -1,0 +1,67 @@
+.containerFormMessage {
+    width: 24rem;
+    border: 2px solid black; 
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.titleMessage {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.customFormMessage {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formGroupMessage {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    margin-bottom: 15px;
+    text-align: left; /* Garantiza alineación a la izquierda */
+}
+
+.formLabelMessage {
+    margin-bottom: 8px; /* Agrega espacio debajo del label */
+    font-weight: bold;
+    color: #555;
+    font-family: inherit; /* Mantiene consistencia en fuentes */
+    resize: vertical; /* Permite redimensionar el textarea verticalmente */
+}
+
+
+.formControlMessage {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.formControlMessage:focus {
+    border-color: #5cb85c;
+    box-shadow: 0 0 5px rgba(92, 184, 92, 0.5);
+}
+
+.formFeedbackMessage {
+    font-size: 0.875rem;
+    color: #d9534f;
+}
+
+.formButtonMessage {
+    background-color: #5cb85c;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.formButtonMessage:hover {
+    background-color: #4cae4c;
+}

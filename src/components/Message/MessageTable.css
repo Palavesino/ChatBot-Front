@@ -1,0 +1,113 @@
+/* Estilo para el contenedor del celular */
+.containerTableMessage {
+    width: 360px; /* Tamaño similar a un celular */
+    height: 640px; /* Tamaño similar a un celular */
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Estilo para la lista de mensajes */
+.messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Estilo para los globos de mensajes */
+.message {
+    max-width: 70%; /* Máximo ancho del mensaje */
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+/* Estilo para mensajes enviados */
+.message.sent {
+    align-self: flex-start;
+    background-color: #dcf8c6;
+    color: #333;
+}
+
+/* Estilo para mensajes recibidos */
+.message.received {
+    align-self: flex-end;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+/* Barra de scroll personalizada */
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+/* Estilo para el ícono */
+.clearIcon {
+    align-self: flex-end;
+    font-size: 3rem; /* Tamaño del ícono */
+    color: black; /* Color del ícono, opcional */
+    cursor: pointer; /* Cambia el puntero a una mano al pasar el mouse */
+    transition: transform 0.2s ease, color 0.2s ease; /* Animación para hover */
+}
+
+.iconsMessages {
+    position: relative; /* Asegura que los hijos se posicionen relativo a este contenedor */
+    display: flex;
+    justify-content: space-between; /* Separa los íconos a los extremos */
+    align-items: center;
+    padding: 0 1rem; /* Agrega espacio horizontal */
+}
+
+
+/* Efecto hover para el ícono */
+.clearIcon:hover {
+    transform: scale(1.1); /* Agranda el ícono ligeramente */
+    color: #ff0000; /* Cambia el color al pasar el mouse */
+}
+
+
+/* Botón de QR */
+.buttonIconQR {
+    width: 10rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #006400; /* Verde oscuro */
+    color: #ffffff; /* Color del texto */
+    border: none;
+    border-radius: 50px; /* Semi redondo */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer;
+  }
+  /* Hover para el botón */
+  .buttonIconQR:hover {
+    background-color: #008000; /* Verde más claro */
+    transform: scale(1.05); /* Agranda ligeramente el botón */
+  }
+  
+  /* Ajustar el tamaño del ícono */
+  .buttonIconQR svg {
+    font-size: 20px; /* Tamaño del ícono */
+    margin-left: 8px; /* Espaciado entre el texto y el ícono */
+  }

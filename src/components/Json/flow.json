@@ -1,0 +1,178 @@
+[
+    {
+        "id": "7134348a-db89-47b2-a0d6-9d856aa810b9",
+        "deletedAt": null,
+        "createdAt": "2024-11-12T00:06:21.081Z",
+        "updatedAt": null,
+        "available": true,
+        "name": "flowsDos",
+        "description": "flujo donde pone el tema de conversacion como Eje: menu, objetivo, pedido, factura,etc.",
+        "Message": [
+            {
+                "id": "bf898e01-6f97-4575-87c9-ee6c27a60c64",
+                "deletedAt": null,
+                "createdAt": "2024-10-22T01:49:18.221Z",
+                "updatedAt": null,
+                "available": true,
+                "numOrder": 1,
+                "name": "legales",
+                "body": "🤖 Por favor, selecciona una opción: \n\n1- Abogacía 📝\n\n2- Escribanía 📃\n\nPara terminar la conversación escribe chau 😊",
+                "option": "MENU",
+                "typeMessage": "DEFAULT",
+                "showName": false,
+                "enterpriseId": "978786f2-037c-4a8d-95ca-98a8ee99f210",
+                "flowId": "7134348a-db89-47b2-a0d6-9d856aa810b9",
+                "parentMessageId": null,
+                "childMessages": [
+                    {
+                        "id": "da2445f1-7d2a-40e1-b6a4-ab2ab8c59e8d",
+                        "deletedAt": "9999-12-12T00:00:00.000Z",
+                        "createdAt": "2024-11-28T15:52:12.897Z",
+                        "updatedAt": null,
+                        "available": true,
+                        "numOrder": 2,
+                        "name": "Escribania",
+                        "body": "🤖 Por favor, selecciona una opción: \n\n1- Escritura de compra venta 📝\n2- Poderes 🏛\n3- Actas 📋\n4- Certificado de firma y documentación 🗂\n5- Confección de contratos de locación 📄\n6- Actas de notificación y constatación 🤝",
+                        "option": "MENU",
+                        "typeMessage": "NAME",
+                        "showName": false,
+                        "enterpriseId": "978786f2-037c-4a8d-95ca-98a8ee99f210",
+                        "flowId": "7134348a-db89-47b2-a0d6-9d856aa810b9",
+                        "parentMessageId": "bf898e01-6f97-4575-87c9-ee6c27a60c64",
+                        "childMessages": []
+                    },
+                    {
+                        "id": "da2445f1-7d2a-40e1-b6a4-ab2ab8c59e9d",
+                        "deletedAt": "9999-12-12T00:00:00.000Z",
+                        "createdAt": "2024-11-28T15:54:46.543Z",
+                        "updatedAt": null,
+                        "available": true,
+                        "numOrder": 1,
+                        "name": "Legal",
+                        "body": "🤖 Por favor, selecciona una opción: \n\n1- Laboral 👷🏾‍♂\n2- Penal 🧑🏻‍⚖\n3- Derecho de familia 👨‍👩‍👧",
+                        "option": "MENU",
+                        "typeMessage": "DEFAULT",
+                        "showName": false,
+                        "enterpriseId": "978786f2-037c-4a8d-95ca-98a8ee99f210",
+                        "flowId": "7134348a-db89-47b2-a0d6-9d856aa810b9",
+                        "parentMessageId": "bf898e01-6f97-4575-87c9-ee6c27a60c64",
+                        "childMessages": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "85e34211-2150-496e-90de-dc0a9bf9dffc",
+        "deletedAt": null,
+        "createdAt": "2024-11-12T00:06:36.715Z",
+        "updatedAt": null,
+        "available": true,
+        "name": "flowsTres",
+        "description": "flows para colocar mas temas de conversacion ",
+        "Message": [
+            {
+                "id": "522d4c1d-7047-40e0-98aa-be3f192ebabf",
+                "deletedAt": null,
+                "createdAt": "2024-10-22T01:55:30.785Z",
+                "updatedAt": null,
+                "available": true,
+                "numOrder": 0,
+                "name": "legales",
+                "body": "Disponibilidad Horaria 🕒\n\nSelecciona una opción:\n\n1- 8:00 a 12:00\n2- 12:00 a 16:00\n3- 16:00 a 20:00",
+                "option": "CAPTURE",
+                "typeMessage": "DEFAULT",
+                "showName": false,
+                "enterpriseId": "978786f2-037c-4a8d-95ca-98a8ee99f210",
+                "flowId": "85e34211-2150-496e-90de-dc0a9bf9dffc",
+                "parentMessageId": null,
+                "childMessages": []
+            },
+            {
+                "id": "7343a69f-f11f-47ce-a817-697c7c7b7a73",
+                "deletedAt": null,
+                "createdAt": "2024-10-22T01:54:54.301Z",
+                "updatedAt": null,
+                "available": true,
+                "numOrder": 1,
+                "name": "legales",
+                "body": "Datos de Usuario :\n\n👤Ingrese su nombre y apellido",
+                "option": "CAPTURE",
+                "typeMessage": "NAME",
+                "showName": false,
+                "enterpriseId": "978786f2-037c-4a8d-95ca-98a8ee99f210",
+                "flowId": "85e34211-2150-496e-90de-dc0a9bf9dffc",
+                "parentMessageId": null,
+                "childMessages": []
+            }
+        ]
+    },
+    {
+        "id": "89edebe0-728c-478b-9383-c0aea4ecf956",
+        "deletedAt": null,
+        "createdAt": "2024-11-12T00:06:50.725Z",
+        "updatedAt": null,
+        "available": true,
+        "name": "flowsCuatro",
+        "description": "flujo donde se colocal final de mensaje Eje: Despedida, Redes, contactos, etc. ",
+        "Message": [
+            {
+                "id": "57e1673a-23d1-417b-82e8-048cfa796383",
+                "deletedAt": null,
+                "createdAt": "2024-10-22T01:57:25.392Z",
+                "updatedAt": null,
+                "available": true,
+                "numOrder": 1,
+                "name": "legales",
+                "body": "Gracias nombre por comunicarte con @DanielBot\nRecuerda consultar nuestras redes para no perderte ninguna novedad!",
+                "option": "READ",
+                "typeMessage": "DEFAULT",
+                "showName": true,
+                "enterpriseId": "978786f2-037c-4a8d-95ca-98a8ee99f210",
+                "flowId": "89edebe0-728c-478b-9383-c0aea4ecf956",
+                "parentMessageId": null,
+                "childMessages": []
+            }
+        ]
+    },
+    {
+        "id": "515a282a-e7f2-497c-9666-1ea97788b38d",
+        "deletedAt": "9999-12-12T00:00:00.000Z",
+        "createdAt": "2024-11-24T21:13:25.932Z",
+        "updatedAt": "2024-11-24T21:13:25.932Z",
+        "available": true,
+        "name": "flowCinco",
+        "description": "Este flow es para probar el post",
+        "Message": []
+    },
+    {
+        "id": "2340ccc4-8c6a-4897-8fb4-f9c234310d78",
+        "deletedAt": null,
+        "createdAt": "2024-11-12T00:06:04.767Z",
+        "updatedAt": "2024-11-25T19:15:58.515Z",
+        "available": true,
+        "name": "Flow 1",
+        "description": "Flow 1 description",
+        "Message": []
+    },
+    {
+        "id": "2545c674-875d-44f9-9fdb-3445f28c7f11",
+        "deletedAt": "9999-12-12T00:00:00.000Z",
+        "createdAt": "2024-11-24T21:13:44.884Z",
+        "updatedAt": "2024-11-26T13:18:24.355Z",
+        "available": true,
+        "name": "Flow Seis",
+        "description": "Prueba Patch de Flow",
+        "Message": []
+    },
+    {
+        "id": "6c1299be-0adf-4556-8ab8-9fe035d7f861",
+        "deletedAt": "9999-12-12T00:00:00.000Z",
+        "createdAt": "2024-11-26T15:45:02.304Z",
+        "updatedAt": "2024-11-26T15:46:16.738Z",
+        "available": true,
+        "name": "Test Patch Flujo Final",
+        "description": "Prueba Final de Patch de Flujo",
+        "Message": []
+    }
+]
